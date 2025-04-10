@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <style>
+        .calculator {
+            width: 320px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #444;
+            border-radius: 8px;
+        }
+        #display {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 24px;
+            text-align: right;
+            background: #eee;
+            border: none;
+            border-radius: 4px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+        }
+        button {
+            padding: 15px 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background: #666;
+            color: white;
+        }
+        button:hover {
+            background: #777;
+        }
+        .operator {
+            background: #ff9500;
+        }
+        .operator:hover {
+            background: #ffaa33;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearMemory()">MC</button>
+            <button onclick="recallMemory()">MR</button>
+            <button onclick="addToMemory()">M+</button>
+            <button onclick="subtractFromMemory()">M-</button>
+            <button onclick="clearDisplay()">C</button>
+
+            <button onclick="addToDisplay('sin(')">sin</button>
+            <button onclick="addToDisplay('cos(')">cos</button>
+            <button onclick="addToDisplay('tan(')">tan</button>
+            <button onclick="addToDisplay('(')">(</button>
+            <button onclick="addToDisplay(')')">)</button>
+
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('/')" class="operator">÷</button>
+            <button onclick="addToDisplay('^')">^</button>
+
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('*')" class="operator">×</button>
+            <button onclick="sqrt()">√</button>
+
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('-')" class="operator">-</button>
+            <button onclick="addToDisplay('Math.PI')">π</button>
+
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addToDisplay('+')" class="operator">+</button>
+            <button onclick="addToDisplay('Math.E')">e</button>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
